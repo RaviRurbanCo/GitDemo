@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="rotatezoomout">
+        <div>
+            <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
+            <span>Hover</span>
+        </div>
+    </div>
+    
+    <style>  
+        .rotatezoomout {
+            margin: 15px 15px 0;
+            padding: 0;
+        }
+        .rotatezoomout:last-child {
+            padding-bottom: 60px;
+        }
+        .rotatezoomout::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .rotatezoomout div {
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 200px;
+            margin: 0 0 0 25px;
+            padding: 0;
+        }
+        .rotatezoomout div:first-child {
+            margin-left: 0;
+        }
+        .rotatezoomout div span {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            z-index: -1;
+            display: block;
+            width: 300px;
+            margin: 0;
+            padding: 0;
+            color: #444;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+            opacity: 0;
+        }
+        figure {
+            width: 300px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            overflow: hidden;
+        }
+        figure:hover+span {
+            bottom: -36px;
+            opacity: 1;
+        }
+
+        /* Rotate */
+        .rotatezoomout figure img {
+            -webkit-transform: rotate(15deg) scale(1.4);
+            transform: rotate(15deg) scale(1.4);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        .rotatezoomout figure:hover img {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+    </style>
+
+</body>
+</html>
